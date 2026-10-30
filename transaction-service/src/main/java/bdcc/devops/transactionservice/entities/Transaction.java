@@ -1,6 +1,6 @@
 package bdcc.devops.transactionservice.entities;
 
-import bdcc.devops.accountservice.entities.Account;
+import bdcc.devops.transactionservice.domain.Account;
 import jakarta.persistence.*;
 import lombok.*;
 

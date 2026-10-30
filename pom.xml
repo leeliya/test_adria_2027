@@ -49,6 +49,7 @@
 		<module>transaction-service</module>
 		<module>gateway-service</module>
 		<module>discovery-service</module>
+		<module>bank-chatbot</module>
 	</modules>
 
 	<build>

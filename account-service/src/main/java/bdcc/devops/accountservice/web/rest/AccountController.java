@@ -2,7 +2,7 @@ package bdcc.devops.accountservice.web.rest;
 
 import bdcc.devops.accountservice.entities.Account;
 import bdcc.devops.accountservice.service.AccountService;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,14 +15,18 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+    @GetMapping("/accounts")
     public List<Account> getAllAccounts() {
         return accountService.getAllAccounts();
     }
-    public Account getAccountById(UUID id) {
+
+    @GetMapping("/accounts/{id}")
+    public Account getAccountById(@PathVariable UUID id) {
         return accountService.getAccountById(id);
     }
 
-    public Account createAccount(Account account) {
+    @PostMapping("/accounts")
+    public Account createAccount(@RequestBody Account account) {
         return accountService.save(account);
     }
 }

@@ -19,12 +19,12 @@ public class TransactionService {
         this.transactionRepository = transactionRepository;
     }
 
-    public void save(Transaction transaction) {
+    public Transaction save(Transaction transaction) {
         try {
             accountRestClient.getAccountById(transaction.getAccountId());
             transaction.setId(UUID.randomUUID());
             transaction.setCreatedAt(String.valueOf(new Date()));
-            transactionRepository.save(transaction);
+            return transactionRepository.save(transaction);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
@@ -35,6 +35,13 @@ public class TransactionService {
                 .orElseThrow(() -> new RuntimeException("Transaction not found"));
         transaction.setAccount(accountRestClient.getAccountById(transaction.getAccountId()));
         return transaction;
+    }
+
+    public List<Transaction> findTransactionsByAccountId(UUID accountId) {
+        return transactionRepository.findByAccountId(accountId).stream()
+                .peek(transaction -> transaction.setAccount(
+                        accountRestClient.getAccountById(transaction.getAccountId())))
+                .toList();
     }
 
     public List<Transaction> getAllTransactions() {
