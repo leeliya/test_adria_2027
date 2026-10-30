@@ -1,4 +1,4 @@
-package bdcc.devops.accountservice.controllers;
+package bdcc.devops.accountservice.web.rest;
 
 import bdcc.devops.accountservice.entities.Account;
 import bdcc.devops.accountservice.service.AccountService;
@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-public class AccountConroller {
+public class AccountController {
     private AccountService accountService;
 
-    AccountConroller(AccountService accountService) {
+    AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
 
