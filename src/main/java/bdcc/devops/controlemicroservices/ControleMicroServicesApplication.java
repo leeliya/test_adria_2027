@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ControleMicroServicesApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ControleMicroServicesApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ControleMicroServicesApplication.class, args);
+	}
 
 }
+
+
