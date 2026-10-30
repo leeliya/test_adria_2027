@@ -1,4 +1,4 @@
-package bdcc.devops.accountservice;
+package bdcc.devops.accountservice.domain;
 
 public enum Status {
     ACTIVE,

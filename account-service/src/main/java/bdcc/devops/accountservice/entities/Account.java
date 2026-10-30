@@ -1,6 +1,6 @@
 package bdcc.devops.accountservice.entities;
 
-import bdcc.devops.accountservice.Status;
+import bdcc.devops.accountservice.domain.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,11 +24,13 @@ public class Account {
     private String currency;
     private Status status;
 
-    public Account(UUID id, String notAvailable, double v, String notAvailable1, Object o) {
+    public Account(UUID id, String customerReference, double balance, String currency, Status status) {
         this.id = id;
-        this.customerReference = notAvailable;
-        this.balance = v;
-        this.currency = notAvailable1;
-        this.status = (Status) o;
+        this.customerReference = customerReference;
+        this.balance = balance;
+        this.currency = currency;
+        this.status = status;
     }
+
+
 }
