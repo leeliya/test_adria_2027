@@ -42,6 +42,15 @@
 		</dependency>
 	</dependencies>
 
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>account-service</module>
+		<module>transaction-service</module>
+		<module>gateway-service</module>
+		<module>discovery-service</module>
+	</modules>
+
 	<build>
 		<plugins>
 			<plugin>
